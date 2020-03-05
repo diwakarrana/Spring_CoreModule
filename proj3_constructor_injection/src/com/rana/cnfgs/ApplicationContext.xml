@@ -5,10 +5,9 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <!-- dependent bean -->
-    <bean id="dt" class="java.util.Date"/>
+    <!-- dependent spring bean id -->
+    <bean id ="dt" class="java.util.Date"/>
     
-    <!-- target bean -->
     <bean id ="wish" class = "com.rana.beans.WishMessageGenerator">
     	<constructor-arg name="date" ref="dt"/>
     </bean>

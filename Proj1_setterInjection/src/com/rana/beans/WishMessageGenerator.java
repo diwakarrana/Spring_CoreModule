@@ -5,10 +5,15 @@ public class WishMessageGenerator {
 	
 	private Date date;
 	
-	public void setDate(Date date)
-		{
-			this.date = date;
-		}
+//	public void setDate(Date date)
+//		{
+//			this.date = date;
+//		}
+	
+	public WishMessageGenerator(Date date) {
+		System.out.println("WishMessageGenerator::ConstructorInjection");
+		this.date = date;
+	}
 	
 	public String generateWishMsg(String name)
 		{   int hour = date.getHours(); 
