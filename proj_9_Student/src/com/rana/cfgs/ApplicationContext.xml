@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+<bean id ="ds" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+<property name="username" value="system"/>
+<property name="password" value="manager"/>
+</property>
+</bean>
 
+<bean id="stDao" class="com.rana.dao.StudentDAOimpl">
+<constructor-arg ref="ds"/>
+</bean>
+
+<bean id ="stService" class= "com.rana.service.StudentServiceimpl">
+<constructor-arg ref="stDao"/>
+</bean>
+
+<bean id ="stController" class= "com.rana.controller.StudentController">
+<constructor-arg ref="stService"/>
+</bean>
 </beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
