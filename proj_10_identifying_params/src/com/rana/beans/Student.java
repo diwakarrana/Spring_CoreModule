@@ -1,19 +1,22 @@
 package com.rana.beans;
 
 public class Student {
-	private int sno;
-	private String sname;
-	private float avg;
+	
 	private int m1;
-	public Student(int sno, float avg, String sname, int m1) {
+	private int m2;
+	private int m3;
+	private int m4;
+	public Student(int m1, int m2, int m3, int m4) {
 		super();
-		this.sno = sno;
 		this.m1 = m1;
-		this.sname = sname;
-		this.avg = avg;
+		this.m2 = m2;
+		this.m3 = m3;
+		this.m4 = m4;
 	}
+	
+	
 	@Override
 	public String toString() {
-		return "Student [sno=" + sno + ", sname=" + sname + ", avg=" + avg + ", m1=" + m1 + "]";
+		return "Student [m1=" + m1 + ", m2=" + m2 + ", m3=" + m3 + ", m4=" + m4 + "]";
 	}
 }
