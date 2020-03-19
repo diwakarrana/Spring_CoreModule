@@ -9,7 +9,7 @@ import javax.activation.DataSource;
 import com.rana.javabean.StudentBO;
 
 public class StudentDAOimpl implements StudentDAO {
-  public final String STUDENT_INSERT_QUERY = "";
+  public final String STUDENT_INSERT_QUERY = "INSERT INTO STUDENT VALUES(?,?,?,?,?)";
   
   private DataSource ds;
   
