@@ -9,7 +9,6 @@ public class StudentServiceimpl implements StudentService {
 	private StudentDAO dao;
 	
 	public StudentServiceimpl(StudentDAO dao) {
-		super();
 		this.dao = dao;
 	}
 

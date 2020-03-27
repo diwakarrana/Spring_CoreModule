@@ -8,7 +8,6 @@ import org.springframework.core.io.FileSystemResource;
 import com.rana.beans.ClassA;
 
 public class Test {
-
 	public static void main(String[] args) {
 		System.out.println("Test.main()");
 		
@@ -17,5 +16,4 @@ public class Test {
 		ClassA a = factory.getBean("aa", ClassA.class);
 		System.out.println("....is it working fine....");
 	}
-
 }

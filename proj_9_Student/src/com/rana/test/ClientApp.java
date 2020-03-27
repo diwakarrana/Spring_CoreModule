@@ -2,15 +2,15 @@ package com.rana.test;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.core.io.FileSystemResource;
-
+import org.springframework.core.io.ClassPathResource;
 import com.rana.controller.StudentController;
 
 public class ClientApp {
 
 	public static void main(String[] args) {
 		//create IOC container........
-		BeanFactory factory = new XmlBeanFactory(new FileSystemResource("src/com/rana/cfgs/ApplicationContext.xml"));
+		
+		BeanFactory factory = new XmlBeanFactory(new ClassPathResource("com\\rana\\cfgs\\ApplicationContext.xml"));
 		
 		//get target beans.....
 		

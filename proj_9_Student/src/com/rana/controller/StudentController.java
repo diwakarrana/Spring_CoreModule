@@ -8,7 +8,6 @@ public class StudentController {
 	private StudentService service;
 
 	public StudentController(StudentService service) {
-		super();
 		this.service = service;
 	}
 public String process(String sno, String sname, String m1, String m2, String m3 ) {

@@ -2,9 +2,7 @@ package com.rana.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.Statement;
-
-import javax.activation.DataSource;
+import javax.sql.DataSource;
 
 import com.rana.javabean.StudentBO;
 
@@ -14,7 +12,6 @@ public class StudentDAOimpl implements StudentDAO {
   private DataSource ds;
   
 	public StudentDAOimpl(DataSource ds) {
-	super();
 	this.ds = ds;
 }
 
@@ -24,7 +21,7 @@ public class StudentDAOimpl implements StudentDAO {
 		try {
 			//get jdbc connection....
 			//..................................................que 1...why typecasting......
-			Connection con = ((Statement) ds).getConnection();
+			Connection con = ds.getConnection();
 			//create prepared statement object
 			PreparedStatement ps = con.prepareStatement(STUDENT_INSERT_QUERY);
 			//set query param values....
@@ -39,6 +36,7 @@ public class StudentDAOimpl implements StudentDAO {
 			return result;
 		}
 		catch(Exception e) {
+			e.printStackTrace();
 			return 0;
 		}
 	}
