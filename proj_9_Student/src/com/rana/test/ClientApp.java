@@ -17,6 +17,11 @@ public class ClientApp {
 		StudentController controller = factory.getBean("stController", StudentController.class);
 		
 		//call method.....
-		System.out.println(controller.process("100", "Diwakar Rana", "94", "94", "88"));
+		try {
+			System.out.println(controller.process("200", "Ganesh", "75", "66", "94"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

@@ -4,7 +4,7 @@ import com.rana.dao.StudentDAO;
 import com.rana.javabean.StudentBO;
 import com.rana.javabean.StudentDTO;
 
-public class StudentServiceimpl implements StudentService {
+final public class StudentServiceimpl implements StudentService {
 	
 	private StudentDAO dao;
 	
@@ -13,7 +13,7 @@ public class StudentServiceimpl implements StudentService {
 	}
 
 	@Override
-	public String generateResult(StudentDTO dto) {
+	final public String generateResult(StudentDTO dto) throws Exception {
 		// write business logic.....
 		int total = dto.getM1()+dto.getM2()+dto.getM3();
 		float avg = total/3.0f;

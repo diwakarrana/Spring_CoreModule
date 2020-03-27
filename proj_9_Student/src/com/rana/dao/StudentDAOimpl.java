@@ -6,19 +6,19 @@ import javax.sql.DataSource;
 
 import com.rana.javabean.StudentBO;
 
-public class StudentDAOimpl implements StudentDAO {
+final public class StudentDAOimpl implements StudentDAO {
+	//query string
   public final String STUDENT_INSERT_QUERY = "INSERT INTO STUDENT VALUES(?,?,?,?,?)";
   
   private DataSource ds;
   
-	public StudentDAOimpl(DataSource ds) {
+	public StudentDAOimpl(final DataSource ds) {
 	this.ds = ds;
 }
 
 	@Override
-	public int insert(StudentBO bo) {
+	public final int insert(final StudentBO bo) throws Exception {
 		//write jdbc code to insert records...
-		try {
 			//get jdbc connection....
 			//..................................................que 1...why typecasting......
 			Connection con = ds.getConnection();
@@ -34,10 +34,5 @@ public class StudentDAOimpl implements StudentDAO {
 			//execute the query
 			int result = ps.executeUpdate();
 			return result;
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-			return 0;
-		}
 	}
 }

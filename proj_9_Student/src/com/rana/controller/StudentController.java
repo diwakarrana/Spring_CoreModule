@@ -10,7 +10,8 @@ public class StudentController {
 	public StudentController(StudentService service) {
 		this.service = service;
 	}
-public String process(String sno, String sname, String m1, String m2, String m3 ) {
+	
+public String process(String sno, String sname, String m1, String m2, String m3 ) throws Exception {
 	//prepare VO object..........
 	StudentVO vo = new StudentVO();
 	vo.setM1(m1);
@@ -30,5 +31,6 @@ public String process(String sno, String sname, String m1, String m2, String m3 
 	//use service class......
 	String result = service.generateResult(dto);
 	return result;
+	
 }
 }
