@@ -5,18 +5,19 @@
 
 
 <bean id="car" class="com.rana.beans.Car" abstract="true">
-<property name="carNo" value="1000"/>
 <property name="model" value="shiftDesire"/>
 <property name="price" value="500000"/>
 <property name="fuelType" value="diesel"/>
 </bean>
 
 <bean id="rajacar" class="com.rana.beans.Car" parent="car">
+<property name="carNo" value="1000"/>
 <property name="owner" value="Raja"/>
 <property name="color" value="blue"/>
 </bean>
 
 <bean id="ranicar" class="com.rana.beans.Car" parent="car">
+<property name="carNo" value="2000"/>
 <property name="owner" value="Rani"/>
 <property name="color" value="pink"/>
 </bean>
