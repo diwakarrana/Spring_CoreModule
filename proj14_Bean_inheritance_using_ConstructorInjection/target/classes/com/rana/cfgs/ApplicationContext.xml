@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="car" class="com.rana.beans.Car" abstract="true">
+<constructor-arg name="model" value="shiftDesire"/>
+<constructor-arg name="price" value="500000"/>
+<constructor-arg name="fuelType" value="diesel"/>
+</bean>
+
+<bean id="rajacar" class="com.rana.beans.Car" parent="car">
+<constructor-arg name="carNo" value="1000"/>
+<constructor-arg name="owner" value="Raja"/>
+<constructor-arg name="color" value="blue"/>
+</bean>
+
+<bean id="ranicar" class="com.rana.beans.Car" parent="car">
+<constructor-arg name="carNo" value="2000"/>
+<constructor-arg name="owner" value="Rani"/>
+<constructor-arg name="color" value="pink"/>
+</bean>
+
+</beans>
