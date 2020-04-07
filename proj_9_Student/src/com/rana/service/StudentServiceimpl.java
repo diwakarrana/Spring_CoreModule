@@ -18,7 +18,7 @@ final public class StudentServiceimpl implements StudentService {
 		int total = dto.getM1()+dto.getM2()+dto.getM3();
 		float avg = total/3.0f;
 		String result = null;
-		if(avg > 35)
+		if(dto.getM1() >= 40 && dto.getM2() >= 40 && dto.getM3() >= 40)
 			result = "pass";
 		else
 			result = "fail";
@@ -30,6 +30,9 @@ final public class StudentServiceimpl implements StudentService {
 		bo.setSno(dto.getSno());
 		bo.setSname(dto.getSname());
 		bo.setTotal(total);
+		bo.setM1(dto.getM1());
+		bo.setM2(dto.getM2());
+		bo.setM3(dto.getM3());
 		
 		//use DAO
 		int cnt = dao.insert(bo);

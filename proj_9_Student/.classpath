@@ -12,5 +12,7 @@
 	<classpathentry kind="lib" path="D:/Spring/Spring-framework_software/spring-framework-5.0.0.RELEASE/libs/spring-expression-5.0.0.RELEASE-javadoc.jar"/>
 	<classpathentry kind="lib" path="D:/Spring/Spring-framework_software/spring-framework-5.0.0.RELEASE/libs/spring-jdbc-5.0.0.RELEASE.jar"/>
 	<classpathentry kind="lib" path="D:/Spring/commons-logging-1.2/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diwakar Rana/Downloads/HikariCP-3.4.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diwakar Rana/Downloads/slf4j-api-1.7.30.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -8,7 +8,7 @@ import com.rana.javabean.StudentBO;
 
 final public class StudentDAOimpl implements StudentDAO {
 	//query string
-  public final String STUDENT_INSERT_QUERY = "INSERT INTO STUDENT VALUES(?,?,?,?,?)";
+  public final String STUDENT_INSERT_QUERY = "INSERT INTO STUDENT(SNO,NAME,TOTAL,AVG,RESULT,M1,M2,M3) VALUES(?,?,?,?,?,?,?,?)";
   
   private DataSource ds;
   
@@ -30,6 +30,9 @@ final public class StudentDAOimpl implements StudentDAO {
 			ps.setInt(3, bo.getTotal());
 			ps.setFloat(4, bo.getAvg());
 			ps.setString(5, bo.getResult());
+			ps.setInt(6, bo.getM1());
+			ps.setInt(7, bo.getM2());
+			ps.setInt(8, bo.getM3());
 			
 			//execute the query
 			int result = ps.executeUpdate();
