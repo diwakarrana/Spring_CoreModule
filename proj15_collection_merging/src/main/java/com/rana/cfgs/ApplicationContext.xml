@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id = "engcou" class="com.rana.beans.EnggCourse">
+	<property name="subjects">
+		<list>
+		<value>Math</value>
+		<value>Chemistry</value>
+		</list>
+	</property>
+</bean>
+
+<bean id = "engcouChild" class="com.rana.beans.EnggCourse" parent="engcou">
+	<property name="subjects">
+		<list merge = "true">
+		<value>C</value>
+		<value>Manufacturing process</value>
+		</list>
+	</property>
+</bean>
+</beans>
