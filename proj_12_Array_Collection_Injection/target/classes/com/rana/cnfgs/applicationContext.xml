@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="st" class="com.rana.beans.Student">
+		<property name="marks">
+			<array>
+				<value>10</value>
+				<value>20</value>
+				<value>30</value>
+				<value>40</value>
+				<value>50</value>
+				<value>60</value>
+				<value>70</value>
+			</array>
+		</property>
+		<property name="impDate">
+			<array>
+				<ref bean="dob" />
+				<ref bean="sysDate" />
+			</array>
+		</property>
+		<property name="list">
+			<list>
+				<value>diwakar</value>
+				<value>ravi</value>
+				<value>golu</value>
+				<value>diwakar</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="dob" class="java.util.Date">
+		<property name="year" value="90" />
+		<property name="month">
+			<value>5</value>
+		</property>
+		<property name="date">
+			<value>10</value>
+		</property>
+	</bean>
+
+	<bean id="sysDate" class="java.util.Date" />
+
+	<bean id="smp" class="com.rana.beans.Set_Map_Properties">
+		<property name="phoneNumbers">
+			<set>
+				<value>"7007959716"</value>
+				<value>"9012139266"</value>
+				<value>""8504063196"</value>
+			</set>
+		</property>
+
+		<property name="facultyVScourse">
+			<map>
+				<entry key="ravi" value=".net"/>
+				<entry key="ganni" value="php"/>
+				<entry key="rana" value="java"/>
+			</map>
+		</property>
+		
+		<property name="emp_desg">
+		<props>
+		<prop key="rana">manager</prop>
+		<prop key="kiran">ceo</prop>
+		</props>
+		</property>
+	</bean>
+
+</beans>
