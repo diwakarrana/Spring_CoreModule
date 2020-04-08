@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="drds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+<!-- <property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/> -->
+<property name="username" value="c##rana"/>
+<property name="password" value="rana123"/>
+
+<!--following constructor injection is given -->
+<!-- <constructor-arg name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+<constructor-arg name="username" value="c##rana"/>
+<constructor-arg name="password" value="rana123"/> -->
+</bean>
+
+<!-- here we have seen example of xml inheritance..... -->
+<!-- <bean id="scds" class="org.springframework.jdbc.datasource.SingleConnectionDataSource" parent="drds"/> -->
+
+
+<bean id="stDao" class="com.rana.dao.StudentDAOimpl">
+<constructor-arg ref="hkcp"/>
+</bean>
+
+<!-- hikari cp is one of the best implementation of DataSource(I) for standalone application-->
+<bean id="hkcp" class="com.zaxxer.hikari.HikariDataSource" parent="drds">
+<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+<property name="maximumPoolSize" value="100"></property>
+</bean>
+
+</beans>
