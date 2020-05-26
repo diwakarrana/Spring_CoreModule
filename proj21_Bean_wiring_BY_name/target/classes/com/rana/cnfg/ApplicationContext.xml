@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
+<beans default-autowire="no"  xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
@@ -15,7 +15,7 @@
        </property>
    </bean>
    
-   <bean id="tp1"  class="com.rana.beans.TourPlan">
+   <bean id="tp1"  class="com.rana.beans.TourPlan" >
        <property name="places">
            <array>
               <value>Goa</value>
@@ -26,6 +26,6 @@
    </bean>
    
    <!-- target bean cfg -->
-    <bean id="agent"  class="com.rana.beans.TravelAgent"  autowire="byName"/>
+    <bean id="agent"  class="com.rana.beans.TravelAgent"  autowire="default"/>
 
 </beans>
